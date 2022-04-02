@@ -1,3 +1,19 @@
-<p>
-  atm-operations works!
-</p>
+<div class="container mt5" >
+  <div class="row" *ngIf="operations.length == 0">
+    <h3>No operations</h3>
+  </div>
+
+  <div class="row" *ngIf="operations.length > 0">
+    <table class="table table-hover" style="cursor: pointer">
+      <tr>
+        <th style="width: 40%">Sum</th>
+        <th style="width: 60%">Date</th>
+      </tr>
+      <tr *ngFor="let operation of operations">
+        <td>{{operation.operationSum}}</td>
+        <td>{{operation.creDate}}</td>
+      </tr>
+    </table>
+  </div>
+
+</div>

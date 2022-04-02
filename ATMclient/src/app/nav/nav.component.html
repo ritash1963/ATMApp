@@ -18,7 +18,7 @@
          </ul>
         
         <form *ngIf="!loggedIn" #loginForm="ngForm" class="d-flex" (ngSubmit)="login()" autocomplete="off">
-          <input name="password" [(ngModel)]="model.password" class="form-control me-2 mr-2 " type="password" placeholder="PIN">
+          <input name="password" [(ngModel)]="model.pin" class="form-control me-2 mr-2 " type="password" placeholder="PIN">
           <button class="btn btn-success" type="submit">Login</button>
         </form>
     </div>
