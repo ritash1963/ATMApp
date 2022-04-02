@@ -2,6 +2,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
 using System.Linq;
+using System;
 using System.Threading.Tasks;
 using API.Data;
 using API.Entities;
@@ -45,7 +46,7 @@ namespace API.Controllers
        [HttpPost("add")]
         public async Task<IActionResult> AddOperation(OperationDto operationDto)
         {
-          
+             operationDto.CreDate = DateTime.Now.ToString("yyyy/MM/dd HH:mm:ss");
              var operation = _mapper.Map<Operation>(operationDto); 
               _repo.Add(operation);
 
